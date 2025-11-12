@@ -115,7 +115,7 @@ python src/classify/train_distilbert.py \
   --text_col  text \
   --label_col specialty \
   --outdir    models/cls_distilbert
-# artifacts: models/cls_distilbert/{config.json,tokenizer.json,*.safetensors,...}
+# artifacts: models/cls_distilbert/{config.json,tokenizer.json,model.safetensors,...}
 ```
 
 > To keep GitHub small, **do not commit large model files**. Add `models/**` to `.gitignore` or set up **Git LFS** if you must push weights.
@@ -223,7 +223,6 @@ cat reports/examples/soap_summary.txt
 - **`ModuleNotFoundError: No module named 'src'`**  
   Use the provided CLIs exactly (`python src/...`). Both `src/qa/report.py` and `src/summarize/build.py` self‑bootstrap `sys.path`.
 - **Transformers wants the internet** for pretrained downloads. We fine‑tune locally; ensure your `models/cls_distilbert/` has the tokenizer & weights when predicting.
-- **Large files blocked by GitHub**: add models and `.venv/` to `.gitignore` or configure **Git LFS**.
 
 ---
 
