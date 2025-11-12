@@ -6,3 +6,4 @@ numpy==1.*
 tqdm==4.*
 rich==13.*
 symspellpy==6.*
+joblib==1.*
