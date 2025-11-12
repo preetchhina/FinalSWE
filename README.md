@@ -11,34 +11,6 @@ A lightweight, reproducible scaffold for **Team 2 – Project 2** that turns raw
 
 ---
 
-## Repo Layout
-
-```
-data/                         # CSV dataset & splits
-models/                       # exported models (sklearn .joblib, HF tokenizer/config/weights)
-reports/
-  ├─ metrics/                 # test_report.json, confusion_matrix.png
-  └─ examples/                # demo_qa.md, soap_summary.txt
-src/
-  ├─ tools/stratify_split.py  # make stratified train/val/test
-  ├─ classify/
-  │   ├─ baselines/
-  │   │   ├─ train_tfidf_logreg.py
-  │   │   ├─ train_tfidf_nb.py
-  │   │   └─ predict_sklearn.py
-  │   ├─ train_distilbert.py  # HF Transformers fine‑tune
-  │   └─ predict.py           # predict with DistilBERT
-  ├─ weak_ner/extract.py      # rule/dictionary extractor (DIAG, MED, DOSE)
-  ├─ qa/
-  │   ├─ rules.py             # range/sections checks
-  │   └─ report.py            # CLI wrapper → md/json output
-  └─ summarize/build.py       # SOAP builder (heuristic)
-```
-
-> **Note:** `src/qa/report.py` and `src/summarize/build.py` include a small bootstrapping block so you can run them directly with `python src/...` (no `PYTHONPATH` gymnastics). You can also use the package form: `python -m src.qa.report` / `python -m src.summarize.build`.
-
----
-
 ## Setup
 
 ```bash
@@ -122,7 +94,7 @@ python src/classify/train_distilbert.py \
 
 ---
 
-## Inference (Prediction)
+## Prediction
 
 ### Sklearn models (TF‑IDF baselines)
 
